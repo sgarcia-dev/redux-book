@@ -1,6 +1,7 @@
 import 'normalize.css/normalize.css';
 import 'assets/stylesheets/main.css';
 import { createStore } from 'redux';
+import './recipes.app';
 
 const reducer = (state, action) => {
   switch (action.type) {
