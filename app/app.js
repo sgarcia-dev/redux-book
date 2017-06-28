@@ -1,23 +1,13 @@
-import 'normalize.css/normalize.css';
-import 'assets/stylesheets/main.css';
-import { createStore } from 'redux';
-import './recipes.app';
+import store from './store/root.store';
+import { loadUI } from './ui/root.ui';
+import { getAddRecipeAction } from './actions/recipes.action';
+import { getAddIngredientAction } from './actions/ingredients.action';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'INC':
-      return state + 1;
-  }
+window.store = store;
+window.getAddRecipeAction = getAddRecipeAction;
+window.getAddIngredientAction = getAddIngredientAction;
 
-  return state;
-};
-
-const initialState = 0;
-
-const store = createStore(reducer, initialState);
-
-store.subscribe(() => document.getElementById('counter').innerText = store.getState());
-
-setInterval(() => store.dispatch({ type: 'INC' }), 500);
-
-console.log("Redux started");
+// add recipes
+store.dispatch(getAddRecipeAction('Pancakes'));
+store.dispatch(getAddIngredientAction('Pancakes', 'Eggs', 4));
+loadUI();

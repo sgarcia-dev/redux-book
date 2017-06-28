@@ -3,7 +3,7 @@ const recipesReducer = (recipes = [], action) => {
         case 'ADD_RECIPE':
             return recipes.concat({ name: action.name });
         default:
-            return recipe;
+            return recipes;
     }
 };
 
