@@ -3,4 +3,12 @@ const getAddRecipeAction = (name) => ({
     name
 });
 
-export { getAddRecipeAction };
+const getSetRecipesAction = () => ({
+	type: 'SET_RECIPES'
+});
+
+const getFetchRecipesAction = () => ({
+	type: 'FETCH_RECIPES'
+});
+
+export { getAddRecipeAction, getSetRecipesAction, getFetchRecipesAction };
