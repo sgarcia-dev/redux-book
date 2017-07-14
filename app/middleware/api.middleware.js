@@ -16,7 +16,9 @@ function fetchData(url, callback) {
 
 const apiMiddleware = ({dispatch}) => next => action => {
     if (action.type === 'FETCH_RECIPES') {
-        fetchData(URL, data => dispatch(getSetRecipesAction(data.recipes)));
+        fetchData(URL, data => {
+            dispatch(getSetRecipesAction(data.recipes));
+        });
     }
 
     next(action);

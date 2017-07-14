@@ -3,8 +3,9 @@ const getAddRecipeAction = (name) => ({
     name
 });
 
-const getSetRecipesAction = () => ({
-	type: 'SET_RECIPES'
+const getSetRecipesAction = (recipes) => ({
+	type: 'SET_RECIPES',
+    recipes
 });
 
 const getFetchRecipesAction = () => ({
